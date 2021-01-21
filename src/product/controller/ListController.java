@@ -30,7 +30,7 @@ public class ListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Service service = new ServiceImpl();
-		
+		 
 		HttpSession session = request.getSession(false);
 		
 		String s_id = (String) session.getAttribute("id");

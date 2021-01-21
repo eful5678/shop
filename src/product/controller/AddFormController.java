@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/seller/AddForm")
 public class AddFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+ 
 	public AddFormController() {
 		super();
 		// TODO Auto-generated constructor stub

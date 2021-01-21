@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 		response.setContentType("text/html; charset=EUC-KR");
 		response.setCharacterEncoding("euc-kr");
-
+ 
 		String path = "/view/member/loginForm.jsp";
 		
 		Service service = new ServiceImpl();

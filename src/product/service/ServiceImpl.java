@@ -28,7 +28,7 @@ public class ServiceImpl implements Service {
 		// TODO Auto-generated method stub
 		return dao.select(num);
 	}
-
+ 
 	public void editProduct(Product p) {
 		// TODO Auto-generated method stub
 		

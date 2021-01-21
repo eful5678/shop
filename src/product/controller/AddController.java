@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-import model.Product;
+import model.Product; 
 import product.service.Service;
 import product.service.ServiceImpl;
 

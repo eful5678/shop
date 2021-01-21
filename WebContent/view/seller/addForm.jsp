@@ -12,7 +12,7 @@
 <table border="1">
 <tr>
 <td>상품명</td><td><input type="text" name="name"></td> 
-</tr>
+</tr> 
 <tr>
 <td>수량</td><td><input type="text" name="quantity"></td> 
 </tr>

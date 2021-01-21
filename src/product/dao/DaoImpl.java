@@ -35,7 +35,7 @@ public class DaoImpl implements Dao {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace(); 
 		} finally {
 			try {
 				pstmt.close();

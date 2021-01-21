@@ -16,7 +16,7 @@
 		<tr>
 			<th>상품번호</th>
 			<th>상품명</th> 
-		</tr>
+		</tr> 
 		<c:forEach var="p" items="${products }">
 			<tr>
 				<td>${p.num }</td>

@@ -15,7 +15,7 @@
 			alert("삭제취소");
 		}
 	}
-</script>
+</script> 
 </head> 
 <body>
 <form name="f" action="${pageContext.request.contextPath }/seller/Edit" method="post">
