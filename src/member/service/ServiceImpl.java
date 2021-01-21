@@ -15,7 +15,7 @@ public class ServiceImpl implements Service {
 
 	public void join(Member m) {
 		// TODO Auto-generated method stub
-		
+		dao.insert(m);
 	}
 
 	public Member getMember(String id) {

@@ -8,5 +8,40 @@
 
 </head>
 <body>
-회원가입
+<form method="POST" action="${pageContext.request.contextPath }/JoinController">
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<th>PWD</th>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td><input type="text" name="email"></td>
+		</tr>
+		<tr>
+			<th>Address</th>
+			<td><input type="text" name="address"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="radio" name="type" value="1">구매자
+				<input type="radio" name="type" value="2">판매자
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit">
+			<input type="reset">
+			</td>
+			
+		</tr>
+	</table>
+</form>
 </html>
