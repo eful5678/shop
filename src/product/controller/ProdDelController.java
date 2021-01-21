@@ -32,8 +32,22 @@ public class ProdDelController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 1. 뭘 삭제할지 알기 위해 product.num 받아옴
+		int num = Integer.parseInt(request.getParameter("num"));
+
+		// 2. 삭제 기능 수행을 위해 service 가져옴
+		Service service = new ServiceImpl();
+		Product p = service.getProduct(num);
+		String uploadPath = "D:\\shop2\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img";
+		String[] arr = p.getImg().split("/");
+		String fname = arr[arr.length-1];
+		File f = new File(uploadPath+fname);
+		f.delete();
+		service.delProduct(num);
 		
+		// 3. 삭제 이후 redirect
+		response.sendRedirect("/shop2/seller/List");
+
 	}
 
 	/**

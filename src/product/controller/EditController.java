@@ -39,8 +39,18 @@ public class EditController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 1. 하는게 수정 밖에 없음.
+		Product p = new Product();
+		p.setNum(Integer.parseInt(request.getParameter("num")));
+		p.setName(request.getParameter("name"));
+		p.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		p.setNum(Integer.parseInt(request.getParameter("price")));
+		p.setContent(request.getParameter("content"));
 		
+		Service service = new ServiceImpl();
+		service.editProduct(p);
+		
+		response.sendRedirect("/shop2/seller/List");
 	}
 
 	/**

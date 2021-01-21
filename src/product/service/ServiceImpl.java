@@ -26,17 +26,15 @@ public class ServiceImpl implements Service {
 
 	public Product getProduct(int num) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.select(num);
 	}
 
 	public void editProduct(Product p) {
-		// TODO Auto-generated method stub
-		
+		dao.update(p);
 	}
 
 	public void delProduct(int num) {
-		// TODO Auto-generated method stub
-		
+		dao.delete(num);
 	}
 
 	public int makeNum() {
