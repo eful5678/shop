@@ -42,3 +42,14 @@ ___
 
 ___
 이외의 반영되지 않은 추가 사항은 카톡으로 공유 부탁드립니다^^ 감사합니다.
+
+
+
+___
+
+## 김평기 commit 내용:
+1. seller package의 DetailController, ProdDelController, EditController 처리
+2. 위와 관련된 DAOImpl, ServiceImpl 메소드 작성
+3. Detail.jsp, list.jsp 작성
+
+___
