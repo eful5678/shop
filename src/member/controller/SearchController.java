@@ -15,6 +15,7 @@ import member.service.ServiceImpl;
 import model.Member;
 
 
+
 /**
  * Servlet implementation class SearchController
  */
@@ -34,9 +35,30 @@ public class SearchController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// 요청과 응답의 인코딩 설정
+		response.setContentType("text/html; charset=EUC-KR");
+		request.setCharacterEncoding("EUC-KR");
+		response.setContentType("EUC-KR");
+	
+		//서비스 객체생성
+		Service service = new ServiceImpl();
+		
+		//세션생성
+		HttpSession session = request.getSession(false);
+		
+		//id를 받아온다
+		String id = (String) session.getAttribute("id");
+		
+		//받아온 id를 m에 담는다
+		Member m  = service.getMember(id);
+		
+		request.setAttribute("m", m);
 				
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/member/editForm.jsp");
+		if(dispatcher != null) {
+		dispatcher.forward(request, response);
+	
+		}
 	}
 
 	/**

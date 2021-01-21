@@ -20,12 +20,13 @@ public class ServiceImpl implements Service {
 
 	public Member getMember(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.select(id);
+		
 	}
 
 	public void editMember(Member m) {
 		// TODO Auto-generated method stub
-		
+		dao.update(m);
 	}
 
 	public void remMember(String id) {

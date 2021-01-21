@@ -32,10 +32,29 @@ public class EditController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+		// 요청 응답 인코딩
+	      request.setCharacterEncoding("euc-kr");
+	      response.setContentType("text/html; charset=euc-kr");
+	      response.setCharacterEncoding("euc-kr");
+	         
+	      //서비스 객체 생성
+	      Service service = new ServiceImpl();
+	      
+	      	String id=request.getParameter("id");
+			String pwd=request.getParameter("pwd");
+			String name=request.getParameter("name");
+			String email=request.getParameter("email");
+			String addr=request.getParameter("addr");
+						
+			
+			Member m = new Member(id,pwd,name,email,addr,0);
+			
+			
+	      service.editMember(m);
+    
+	      RequestDispatcher dispatcher = request.getRequestDispatcher("/view/member/result.jsp");
+	      dispatcher.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
