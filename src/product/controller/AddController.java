@@ -37,7 +37,7 @@ public class AddController extends HttpServlet {
 		String s_id = (String) session.getAttribute("id");
 		
 		Product p = new Product();
-		
+		 
 		p.setS_id(s_id);
 		p.setNum(service.makeNum());
 

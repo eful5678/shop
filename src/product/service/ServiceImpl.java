@@ -50,7 +50,7 @@ public class ServiceImpl implements Service {
 	}
 
 	public Product editQuantity(int q, int num) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		dao.updateQuantity(q, num);
 		return getProduct(num);
 	}

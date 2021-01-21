@@ -18,7 +18,7 @@
 </tr>
 <tr>
 <td>가격</td><td><input type="text" name="price"></td> 
-</tr> 
+</tr>  
 <tr>
 <td>상품이미지등록</td><td><input type="file" name="img"></td> 
 </tr>

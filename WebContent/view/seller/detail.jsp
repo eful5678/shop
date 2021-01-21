@@ -16,7 +16,7 @@
 		}
 	}
 </script>
-</head>
+</head> 
 <body>
 <form name="f" action="${pageContext.request.contextPath }/seller/Edit" method="post">
 <table border="1">

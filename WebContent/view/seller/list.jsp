@@ -15,7 +15,7 @@
 	<table border="1">
 		<tr>
 			<th>상품번호</th>
-			<th>상품명</th>
+			<th>상품명</th> 
 		</tr>
 		<c:forEach var="p" items="${products }">
 			<tr>

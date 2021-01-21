@@ -34,7 +34,7 @@ public class ListController extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		String s_id = (String) session.getAttribute("id");
-		
+		 
 		ArrayList<Product> products = service.getProductsById(s_id);
 		
 		request.setAttribute("products", products);
