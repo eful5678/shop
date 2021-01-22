@@ -30,6 +30,7 @@ public class ServiceImpl implements Service {
 
 	public void remMember(String id) {
 		// TODO Auto-generated method stub
+		dao.delete(id);
 		
 	}
 

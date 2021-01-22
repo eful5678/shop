@@ -67,6 +67,23 @@ public class DaoImpl implements Dao {
 	public void delete(String id) {
 		// TODO Auto-generated method stub
 		
+		Connection conn = null;
+		String sql = "DELETE FROM shop_member WHERE id=?";
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = db.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 
