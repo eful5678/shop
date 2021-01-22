@@ -24,6 +24,28 @@ public class DaoImpl implements Dao {
 	public void insert(Member m) {
 		// TODO Auto-generated method stub
 		
+		Connection conn = null;
+		String sql = "INSERT INTO shop_member VALUES(?,?,?,?,?,?)";
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = db.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m.getId());
+			pstmt.setString(2, m.getPwd());
+			pstmt.setString(3, m.getName());
+			pstmt.setString(4, m.getEmail());
+			pstmt.setString(5, m.getAddr());
+			pstmt.setInt(6, m.getType());
+			
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public Member select(String id) {
@@ -44,6 +66,23 @@ public class DaoImpl implements Dao {
 	
 	public void delete(String id) {
 		// TODO Auto-generated method stub
+		
+		Connection conn = null;
+		String sql = "DELETE FROM shop_member WHERE id=?";
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = db.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 		
 		
 	}

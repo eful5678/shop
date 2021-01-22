@@ -33,6 +33,20 @@ public class JoinController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		Service service = new ServiceImpl();
+		
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("password");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String addr = request.getParameter("address");
+		int type = Integer.parseInt(request.getParameter("type"));
+		
+		Member m = new Member(id, pwd, name, email, addr, type);
+		service.join(m);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/member/loginForm.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

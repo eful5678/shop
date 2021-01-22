@@ -37,6 +37,18 @@ public class DelController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		Service service = new ServiceImpl();
+		
+		HttpSession session = request.getSession(false);
+		
+		String id = (String)session.getAttribute("id");
+		
+		session.invalidate();
+		service.remMember(id);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/member/loginForm.jsp");
+		dispatcher.forward(request, response);
+		
 	}
 
 	/**
