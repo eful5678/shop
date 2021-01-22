@@ -35,7 +35,12 @@ public class OPListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		Service service = new ServiceImpl();
+		ArrayList<Product> products = service.getProductAll();
+		request.setAttribute("products", products);
+		String path = "/view/order/list.jsp";
+		RequestDispatcher rd = request.getRequestDispatcher(path);
+		rd.forward(request, response);
 	}
 
 	/**

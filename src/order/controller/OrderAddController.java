@@ -35,7 +35,19 @@ public class OrderAddController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		Service service = new ServiceImpl();
+		HttpSession session = request.getSession(false);
+		String o_id = (String) session.getAttribute("id");
+		Order o = new Order();
+		o.setPro_num(Integer.parseInt(request.getParameter("num")));
+		o.setOrder_num(Integer.parseInt(request.getParameter("quantity")));
+		o.setTotal_price(Integer.parseInt(request.getParameter("total_price")));
+		o.setO_id(o_id);
+		o.setO_state(Integer.parseInt(request.getParameter("o_state")));
+		service.addOrder(o);
+		String path = "/shop2/order/myList?o_state=";
+		path += o.getO_state();
+		response.sendRedirect(path);
 	}
 
 	/**
